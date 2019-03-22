@@ -1,0 +1,32 @@
+1.新建django项目三个注意事项;
+1. 配置相关   项目名/settings.py文件
+		1. Templates(存放HTML文件的配置)       <-- 告诉Django去哪儿找我的HTML文件
+
+		2. 静态文件(css/js/图片)
+			# 静态文件保存目录的别名
+			STATIC_URL = '/static/'
+
+			# 所有静态文件(css/js/图片)都放在我下面你配置的文件夹中
+			STATICFILES_DIRS = [
+				os.path.join(BASE_DIR, "static"),
+			]
+		3. 注释掉setting.py中 带有 csrf 的那一行(大概45~47行)
+
+
+
+2.django中App
+什么是App?
+project      --->项目（老男孩教育）
+App          -->应用（Linux学院/Python学院/大数据学院）
+方便我们在一个大的django项目中，管理实现不同的业务功能
+
+1.创建App命令
+ 1.命令行
+ python3 manage.py startapp app01 名字
+
+ views.py model.py放函数
+ apps.py  app相关配置
+
+ 配置settin
+ INSTALLED_APPS 告诉django有哪些APP
+ 添加'app01.apps.App01Config' 或'app01'
